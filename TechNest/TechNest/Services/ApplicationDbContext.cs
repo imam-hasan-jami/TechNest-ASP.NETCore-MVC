@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TechNest.Models;
 
 namespace TechNest.Services
 {
@@ -8,5 +9,7 @@ namespace TechNest.Services
         {
                 
         }
+
+        public DbSet<Product> Products { get; set; }
     }
 }
