@@ -46,8 +46,7 @@
               "RelativeToolTip": "TechNest\\Views\\Product\\Edit.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T13:32:56.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T13:32:56.781Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "TechNest\\Models\\ProductDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:44:00.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T10:44:00.177Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "TechNest\\Views\\Product\\Create.cshtml",
               "ViewState": "AgIAAB0AAAAAAAAAAAAUwDEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-14T11:02:27.564Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T11:02:27.564Z"
             },
             {
               "$type": "Document",
@@ -81,9 +78,9 @@
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Product\\Index.cshtml",
               "RelativeDocumentMoniker": "TechNest\\Views\\Product\\Index.cshtml",
-              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Product\\Index.cshtml*",
-              "RelativeToolTip": "TechNest\\Views\\Product\\Index.cshtml*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC8AAAAIAAAAAAAAAA==",
+              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "TechNest\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-04T15:23:17.48Z",
               "EditorCaption": ""
@@ -94,9 +91,9 @@
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "TechNest\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\ProductController.cs*",
-              "RelativeToolTip": "TechNest\\Controllers\\ProductController.cs*",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAYwJ4AAAAAAAAAAAAAAA==",
+              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "TechNest\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T15:20:46.904Z",
               "EditorCaption": ""
@@ -111,8 +108,7 @@
               "RelativeToolTip": "TechNest\\Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T16:56:07.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T16:56:07.589Z"
             }
           ]
         }
