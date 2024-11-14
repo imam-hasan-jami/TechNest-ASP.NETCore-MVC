@@ -89,5 +89,70 @@ namespace TechNest.Controllers
 
             return View(productDTO);
         }
+
+        [HttpPost]
+        public IActionResult Edit(int id, ProductDTO productDTO)
+        {
+            var product = context.Products.Find(id);
+
+            if (product == null)
+            {
+                return RedirectToAction("Index", "Product");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ViewData["ProductId"] = product.Id;
+                ViewData["ImageFileName"] = product.ImageFileName;
+                ViewData["CreatedAt"] = product.CreatedAt.ToString("MM/dd/yyyy");
+
+                return View(productDTO);
+            }
+
+            string newFileName = product.ImageFileName;
+            if(productDTO.ImageFile != null)
+            {
+                newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                newFileName += Path.GetExtension(productDTO.ImageFile.FileName);
+
+                string imageFullPath = environment.WebRootPath + "/Product-Images/" + newFileName;
+                using (var stream = System.IO.File.Create(imageFullPath))
+                {
+                    productDTO.ImageFile.CopyTo(stream);
+                }
+
+                string oldImageFullPath = environment.WebRootPath + "/Product-Images/" + product.ImageFileName;
+                System.IO.File.Delete(oldImageFullPath);
+            }
+
+            product.Name = productDTO.Name;
+            product.Brand = productDTO.Brand;
+            product.Category = productDTO.Category;
+            product.Price = productDTO.Price;
+            product.Description = productDTO.Description;
+            product.ImageFileName = newFileName;
+
+            context.SaveChanges();
+
+            return RedirectToAction("Index", "Product");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var product = context.Products.Find(id);
+
+            if (product == null)
+            {
+                return RedirectToAction("Index", "Product");
+            }
+
+            string imageFullPath = environment.WebRootPath + "/Product-Images/" + product.ImageFileName;
+            System.IO.File.Delete(imageFullPath);
+
+            context.Products.Remove(product);
+            context.SaveChanges();
+
+            return RedirectToAction("Index", "Product");
+        }
     }
 }
