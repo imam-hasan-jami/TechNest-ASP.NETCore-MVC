@@ -6,7 +6,7 @@
 
 <div class="row mb-5">
     <div class="col">
-        <a class="btn btn-primary" asp-controller="Products" asp-action="Create">New Product</a>
+        <a class="btn btn-primary" asp-controller="Product" asp-action="Create">New Product</a>
     </div>
     <div class="col">
 
@@ -39,8 +39,8 @@
                 <td><img src="/Product-Images/@product.ImageFileName" alt="@product.Name" width="100" /></td>
                 <td>@product.CreatedAt.ToString("MM/dd/yyyy")</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
-                    <a class="btn btn-danger btn-sm" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                    <a class="btn btn-primary btn-sm" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
                 </td>
             </tr>
         }
