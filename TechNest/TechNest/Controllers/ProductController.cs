@@ -16,13 +16,26 @@ namespace TechNest.Controllers
             this.environment = environment;
         }
 
-        public IActionResult Index(int pageIndex, string? search)
+        public IActionResult Index(int pageIndex, string? search, string? column, string? orderBy)
         {
             IQueryable<Product> query = context.Products;
 
             if(search != null)
             {
                 query = query.Where(p => p.Name.Contains(search) || p.Brand.Contains(search));
+            }
+
+            string[] validColumns = { "Id", "Name", "Brand", "Category", "Price", "CreatedAt" };
+            string[] validOrderBy = { "desc", "asc" };
+
+            if(!validColumns.Contains(column))
+            {
+                column = "Id";
+            }
+
+            if(!validOrderBy.Contains(orderBy))
+            {
+                orderBy = "desc";
             }
 
             query = query.OrderByDescending(p => p.Id);
@@ -42,6 +55,9 @@ namespace TechNest.Controllers
             ViewData["TotalPages"] = totalPages;
 
             ViewData["Search"] = search ?? "";
+
+            ViewData["Column"] = column;
+            ViewData["OrderBy"] = orderBy;
 
             return View(products);
         }

@@ -4,6 +4,9 @@
     int totalPages = (int)ViewData["TotalPages"]!;
 
     string search = (string)ViewData["Search"]!;
+
+    string column = (string)ViewData["Column"]!;
+    string orderBy = (string)ViewData["OrderBy"]!;
 }
 
 <h2 class="text-center mb-5">List of Products</h2>
@@ -20,16 +23,32 @@
     </div>
 </div>
 
+<script>
+    function sortTable(column) {
+        let orderBy = "desc"
+        let currentColumn = "@column"
+        let currentOrder = "@orderBy"
+        if (column === currentColumn) {
+            if(currentOrder === "asc") {
+                orderBy = "desc"
+            } else {
+                orderBy = "asc"
+            }
+        }
+        window.location.href = "?search=@(search)&column=" + column + "&orderBy=" + orderBy
+    }
+</script>
+
 <table class="table">
     <thread>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Brand</th>
-            <th>Category</th>
-            <th>Price</th>
+            <th style="cursor: pointer" onclick="sortTable('Id')">ID</th>
+            <th style="cursor: pointer" onclick="sortTable('Name')">Name</th>
+            <th style="cursor: pointer" onclick="sortTable('Brand')">Brand</th>
+            <th style="cursor: pointer" onclick="sortTable('Category')">Category</th>
+            <th style="cursor: pointer" onclick="sortTable('Price')">Price</th>
             <th>Image</th>
-            <th>Created At</th>
+            <th style="cursor: pointer" onclick="sortTable('CreatedAt')">Created At</th>
             <th>Actions</th>
         </tr>
     </thread>
@@ -63,7 +82,7 @@
             {
                 active = "active";
             }
-            <li class="page-item @active"><a class="page-link" asp-route-pageIndex="@i" asp-route-search="@search">@i</a></li>
+            <li class="page-item @active"><a class="page-link" asp-route-pageIndex="@i" asp-route-search="@search" asp-route-column="@column" asp-route-orderBy="@orderBy">@i</a></li>
         }
     </ul>
 </nav>
