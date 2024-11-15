@@ -16,9 +16,15 @@ namespace TechNest.Controllers
             this.environment = environment;
         }
 
-        public IActionResult Index(int pageIndex)
+        public IActionResult Index(int pageIndex, string? search)
         {
             IQueryable<Product> query = context.Products;
+
+            if(search != null)
+            {
+                query = query.Where(p => p.Name.Contains(search) || p.Brand.Contains(search));
+            }
+
             query = query.OrderByDescending(p => p.Id);
 
             if (pageIndex < 1)
@@ -34,6 +40,8 @@ namespace TechNest.Controllers
 
             ViewData["PageIndex"] = pageIndex;
             ViewData["TotalPages"] = totalPages;
+
+            ViewData["Search"] = search ?? "";
 
             return View(products);
         }
