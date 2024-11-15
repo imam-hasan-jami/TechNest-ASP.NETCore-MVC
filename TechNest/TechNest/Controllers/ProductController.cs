@@ -4,6 +4,7 @@ using TechNest.Services;
 
 namespace TechNest.Controllers
 {
+    [Route("/Admin/[controller]/{action=Index}/{id?}")]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext context;
