@@ -68,7 +68,7 @@
             {
                 active = "active";
             }
-            <li class="page-item @active"><a class="page-link" asp-route-pageIndex="@i">@i</a></li>
+            <li class="page-item @active"><a class="page-link" asp-route-pageIndex="@i" asp-route-search="@Model.Search" asp-route-brand="@Model.Brand" asp-route-category="@Model.Category" asp-route-sort="@Model.Sort">@i</a></li>
         }
     </ul>
 </nav>
