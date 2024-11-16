@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TechNest.Models;
 using TechNest.Services;
 
 namespace TechNest.Controllers
@@ -14,9 +15,25 @@ namespace TechNest.Controllers
         }
         public IActionResult Index(int pageIndex)
         {
-            var products = context.Products.OrderByDescending(p => p.Id).ToList();
+            IQueryable<Product> query = context.Products;
+
+            query = query.OrderByDescending(p => p.Id);
+
+            //pagination functionality
+            if(pageIndex < 1)
+            {
+                pageIndex = 1;
+            }
+
+            decimal count = query.Count();
+            int totalPages = (int)Math.Ceiling(count / pageSize);
+            query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+
+            var products = query.ToList();
 
             ViewBag.Products = products;
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.TotalPages = totalPages;
 
             return View();
         }
