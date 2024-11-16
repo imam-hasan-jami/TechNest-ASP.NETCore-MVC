@@ -17,6 +17,23 @@ namespace TechNest.Controllers
         {
             IQueryable<Product> query = context.Products;
 
+            //search functionality
+            if(search != null && search.Length > 0)
+            {
+                query = query.Where(p => p.Name.Contains(search));
+            }
+
+            //filter functionality
+            if (brand != null && brand.Length > 0)
+            {
+                query = query.Where(p => p.Brand.Contains(brand));
+            }
+
+            if (category != null && category.Length > 0)
+            {
+                query = query.Where(p => p.Category.Contains(category));
+            }
+
             query = query.OrderByDescending(p => p.Id);
 
             //pagination functionality
