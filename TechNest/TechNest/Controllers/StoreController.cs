@@ -13,7 +13,7 @@ namespace TechNest.Controllers
         {
             this.context = context;
         }
-        public IActionResult Index(int pageIndex)
+        public IActionResult Index(int pageIndex, string? search, string? brand, string? category, string? sort)
         {
             IQueryable<Product> query = context.Products;
 
@@ -35,7 +35,15 @@ namespace TechNest.Controllers
             ViewBag.PageIndex = pageIndex;
             ViewBag.TotalPages = totalPages;
 
-            return View();
+            var storeSearchModel = new StoreSearchModel()
+            {
+                Search = search,
+                Brand = brand,
+                Category = category,
+                Sort = sort
+            };
+
+            return View(storeSearchModel);
         }
     }
 }
