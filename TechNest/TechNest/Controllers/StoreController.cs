@@ -34,7 +34,22 @@ namespace TechNest.Controllers
                 query = query.Where(p => p.Category.Contains(category));
             }
 
-            query = query.OrderByDescending(p => p.Id);
+            //sort functionality
+            if (sort == "price_asc")
+            {
+                query = query.OrderBy(p => p.Price);
+            }
+            else if (sort == "price_desc")
+            {
+                query = query.OrderByDescending(p => p.Price);
+            }
+            else
+            {
+                //newest products first
+                query = query.OrderByDescending(p => p.Id);
+            }
+
+            //query = query.OrderByDescending(p => p.Id);
 
             //pagination functionality
             if(pageIndex < 1)
