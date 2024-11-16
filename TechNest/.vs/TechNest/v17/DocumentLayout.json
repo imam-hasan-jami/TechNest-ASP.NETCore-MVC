@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\store\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\store\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\models\\storesearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\models\\storesearchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StoreSearchModel.cs",
-              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Models\\StoreSearchModel.cs",
-              "RelativeDocumentMoniker": "TechNest\\Models\\StoreSearchModel.cs",
-              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Models\\StoreSearchModel.cs",
-              "RelativeToolTip": "TechNest\\Models\\StoreSearchModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T14:13:15.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Store\\Index.cshtml",
-              "RelativeDocumentMoniker": "TechNest\\Views\\Store\\Index.cshtml",
-              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Store\\Index.cshtml",
-              "RelativeToolTip": "TechNest\\Views\\Store\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAADYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-16T13:13:43.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Store\\Details.cshtml",
+              "RelativeDocumentMoniker": "TechNest\\Views\\Store\\Details.cshtml",
+              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Store\\Details.cshtml",
+              "RelativeToolTip": "TechNest\\Views\\Store\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwCMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-16T16:59:03.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "StoreController.cs",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\StoreController.cs",
               "RelativeDocumentMoniker": "TechNest\\Controllers\\StoreController.cs",
               "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\StoreController.cs",
               "RelativeToolTip": "TechNest\\Controllers\\StoreController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAACkAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T13:09:58.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "TechNest\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "TechNest\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T13:19:21.068Z",
+              "WhenOpened": "2024-11-16T16:56:35.499Z",
               "EditorCaption": ""
             }
           ]

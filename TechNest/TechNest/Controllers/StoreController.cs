@@ -77,5 +77,17 @@ namespace TechNest.Controllers
 
             return View(storeSearchModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var product = context.Products.Find(id);
+
+            if (product == null)
+            {
+                return RedirectToAction("Index", "Store");
+            }
+
+            return View(product);
+        }
     }
 }
