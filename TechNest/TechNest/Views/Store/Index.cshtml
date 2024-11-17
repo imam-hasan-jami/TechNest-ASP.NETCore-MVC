@@ -4,9 +4,10 @@
 
 <h2 class="pb-4 text-center">Products</h2>
 
+@* Added reset button to reset the filters *@
 <form class="row g-3 mb-3">
     <div class="col-lg-2 col-md-4">
-        <select class="form-select" name="brand" asp-for="Brand" onchange="this.form.submit()">
+        <select class="form-select" id="brandSelect" name="brand" asp-for="Brand" onchange="this.form.submit(); checkResetVisibility();">
             <option value="">All Brands</option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
@@ -15,7 +16,7 @@
         </select>
     </div>
     <div class="col-lg-2 col-md-4">
-        <select class="form-select" name="category" asp-for="Category" onchange="this.form.submit()">
+        <select class="form-select" id="categorySelect" name="category" asp-for="Category" onchange="this.form.submit(); checkResetVisibility();">
             <option value="">All Categories</option>
             <option value="Phones">Phones</option>
             <option value="Computers">Computers</option>
@@ -26,11 +27,14 @@
         </select>
     </div>
     <div class="col-lg-2 col-md-4">
-        <select class="form-select" name="sort" asp-for="Sort" onchange="this.form.submit()">
+        <select class="form-select" id="sortSelect" name="sort" asp-for="Sort" onchange="this.form.submit(); checkResetVisibility();">
             <option value="newest">Order By Newest</option>
             <option value="price_asc">Price: Low to High</option>
             <option value="price_desc">Price: High to Low</option>
         </select>
+    </div>
+    <div class="col-12" id="resetButtons" style="display: none;">
+        <button type="button" class="btn btn-secondary" onclick="resetFilters()">Reset Filters</button>
     </div>
 
     @* <div class="col-lg-6 col-md-12 d-flex">
@@ -38,6 +42,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
     </div> *@
 
+    @* Added clear button to clear the search box *@
     <div class="col-lg-6 col-md-12 d-flex">
         <input class="form-control me-2" id="searchBox" name="search" asp-for="Search" placeholder="Search by Name" oninput="toggleClearButton()">
         <button class="btn btn-outline-danger me-2" type="button" id="clearButton" onclick="clearSearchBoxAndSubmit()" style="display: none;">Clear</button>
@@ -45,6 +50,32 @@
     </div>
 
     <script>
+        // Function to check if any option other than default is selected
+        function checkResetVisibility() {
+            const brandSelect = document.getElementById('brandSelect');
+            const categorySelect = document.getElementById('categorySelect');
+            const sortSelect = document.getElementById('sortSelect');
+            const resetButtons = document.getElementById('resetButtons');
+
+            if (brandSelect.value !== '' || categorySelect.value !== '' || sortSelect.value !== 'newest') {
+                resetButtons.style.display = 'block';
+            } else {
+                resetButtons.style.display = 'none';
+            }
+        }
+
+        // Function to reset the filters
+        function resetFilters() {
+            document.getElementById('brandSelect').value = '';
+            document.getElementById('categorySelect').value = '';
+            document.getElementById('sortSelect').value = 'newest';
+            document.forms[0].submit();
+        }
+
+        // Check visibility when the page loads
+        document.addEventListener('DOMContentLoaded', checkResetVisibility);
+
+        // Function to toggle the clear button
         function toggleClearButton() {
             var searchBox = document.getElementById('searchBox');
             var clearButton = document.getElementById('clearButton');
@@ -55,6 +86,7 @@
             }
         }
 
+        // Function to clear the search box and submit the form 
         function clearSearchBoxAndSubmit() {
             var searchBox = document.getElementById('searchBox');
             searchBox.value = '';
