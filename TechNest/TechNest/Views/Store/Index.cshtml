@@ -32,10 +32,41 @@
             <option value="price_desc">Price: High to Low</option>
         </select>
     </div>
-    <div class="col-lg-6 col-md-12 d-flex">
+
+    @* <div class="col-lg-6 col-md-12 d-flex">
         <input class="form-control me-2" name="search" asp-for="Search" placeholder="Search by Name">
         <button class="btn btn-outline-success" type="submit">Search</button>
+    </div> *@
+
+    <div class="col-lg-6 col-md-12 d-flex">
+        <input class="form-control me-2" id="searchBox" name="search" asp-for="Search" placeholder="Search by Name" oninput="toggleClearButton()">
+        <button class="btn btn-outline-danger me-2" type="button" id="clearButton" onclick="clearSearchBoxAndSubmit()" style="display: none;">Clear</button>
+        <button class="btn btn-outline-success" type="submit">Search</button>
     </div>
+
+    <script>
+        function toggleClearButton() {
+            var searchBox = document.getElementById('searchBox');
+            var clearButton = document.getElementById('clearButton');
+            if (searchBox.value.length > 0) {
+                clearButton.style.display = 'inline-block';
+            } else {
+                clearButton.style.display = 'none';
+            }
+        }
+
+        function clearSearchBoxAndSubmit() {
+            var searchBox = document.getElementById('searchBox');
+            searchBox.value = '';
+            toggleClearButton();
+            searchBox.form.submit();
+        }
+
+        // Call toggleClearButton on page load
+        window.onload = function() {
+            toggleClearButton();
+        };
+    </script>
 </form>
 
 <div class="row mb-5 g-3">
