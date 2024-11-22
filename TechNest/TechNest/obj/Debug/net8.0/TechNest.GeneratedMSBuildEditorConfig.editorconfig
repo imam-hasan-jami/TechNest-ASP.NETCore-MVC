@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\ASP.NET Core\TechNest-ASP.NETCore-MVC\TechNest\TechNest
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/ASP.NET Core/TechNest-ASP.NETCore-MVC/TechNest/TechNest/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ASP.NET Core/TechNest-ASP.NETCore-MVC/TechNest/TechNest/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
