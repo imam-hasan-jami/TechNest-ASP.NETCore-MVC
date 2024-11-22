@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -27,6 +31,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TechNest\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TechNest\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAYwDcAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T18:59:11.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "TechNest\\Views\\Account\\Register.cshtml",
@@ -39,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "TechNest\\Controllers\\AccountController.cs",
@@ -52,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "RegisterDTO.cs",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Models\\RegisterDTO.cs",
               "RelativeDocumentMoniker": "TechNest\\Models\\RegisterDTO.cs",
