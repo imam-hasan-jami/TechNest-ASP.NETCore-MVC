@@ -5,6 +5,14 @@
     ViewData["HomePage"] = true;
 }
 
+@if (TempData["AccessDeniedMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>@TempData["AccessDeniedMessage"]</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
 <div style="background-color: #08618d;">
     <div class="container text-white py-5">
         <div class="row align-items-center g-5">

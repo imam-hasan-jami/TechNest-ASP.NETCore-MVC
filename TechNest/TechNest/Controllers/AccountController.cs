@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TechNest.Models;
 
@@ -117,6 +118,19 @@ namespace TechNest.Controllers
             }
 
             return View(loginDTO);
+        }
+
+        [Authorize]
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
+        public IActionResult AccessDenied()
+        {
+            TempData["AccessDeniedMessage"] = "Only admin has access to the page you've requested";
+            
+            return RedirectToAction("Index", "Home");
         }
     }
 }
