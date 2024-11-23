@@ -181,6 +181,43 @@ namespace TechNest.Controllers
             return View(profileDTO);
         }
 
+        [Authorize]
+        public IActionResult Password()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Password(PasswordDTO passwordDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            //get the current authenticated user
+            var appUser = await userManager.GetUserAsync(User);
+            if (appUser == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            //update the user password
+            var result = await userManager.ChangePasswordAsync(appUser, passwordDTO.CurrentPassword, passwordDTO.NewPassword);
+            if (result.Succeeded)
+            {
+                TempData["SuccessMessage"] = "Password updated successfully";
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Failed to update the password: " + result.Errors.First().Description;
+            }
+
+            return View();
+        }
+
         public IActionResult AccessDenied()
         {
             TempData["AccessDeniedMessage"] = "Only admin has access to the page you've requested";
