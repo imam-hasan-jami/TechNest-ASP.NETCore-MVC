@@ -17,13 +17,23 @@ namespace TechNest.Controllers
 
         public IActionResult Register()
         {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
-            if(!ModelState.IsValid)
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (!ModelState.IsValid)
             {
                 return View(registerDTO);
             }
@@ -74,13 +84,23 @@ namespace TechNest.Controllers
 
         public IActionResult Login()
         {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
-            if(!ModelState.IsValid)
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (!ModelState.IsValid)
             {
                 return View(loginDTO);
             }
