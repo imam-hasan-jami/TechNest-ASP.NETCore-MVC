@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using TechNest.Models;
+using TechNest.Services;
 
 namespace TechNest.Controllers
 {
@@ -10,11 +11,13 @@ namespace TechNest.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly IConfiguration configuration;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.configuration = configuration;
         }
 
         public IActionResult Register()
@@ -253,7 +256,19 @@ namespace TechNest.Controllers
                 var token = await userManager.GeneratePasswordResetTokenAsync(user);
                 string resultUrl = Url.ActionLink("ResetPassword", "Account", new { token }) ?? "URL Error";
 
-                Console.WriteLine("Password reset link: " + resultUrl);
+                //send url by email
+                string senderName = configuration["BrevoSettings:SenderName"] ?? "";
+                string senderEmail = configuration["BrevoSettings:SenderEmail"] ?? "";
+                string username = user.FirstName + " " + user.LastName;
+                string subject = "Password Reset";
+                string message = "Dear " + username + ",\n\n" +
+                    "Please click the link below to reset your password:\n" +
+                    resultUrl + "\n\n" +
+                    "If you did not request a password reset, please ignore this email.\n\n" +
+                    "Regards,\n" +
+                    "Brevo Team";
+
+                EmailSender.SendEmail(senderName, senderEmail, username, email, subject, message);
             }
 
             ViewBag.SuccessMessage = "If the email address is registered, a password reset link will be sent to the email address";

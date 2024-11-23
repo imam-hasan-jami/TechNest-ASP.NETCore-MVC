@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using sib_api_v3_sdk.Client;
 using TechNest.Models;
 using TechNest.Services;
 
@@ -24,6 +25,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
     })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+Configuration.Default.ApiKey.Add("api-key", builder.Configuration["BrevoSettings:ApiKey"]);
 
 var app = builder.Build();
 
