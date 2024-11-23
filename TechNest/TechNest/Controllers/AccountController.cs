@@ -76,5 +76,27 @@ namespace TechNest.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(loginDTO);
+            }
+
+            var result = await signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password, loginDTO.RememberMe, false);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid login attempt";
+            }
+
+            return View(loginDTO);
+        }
     }
 }
