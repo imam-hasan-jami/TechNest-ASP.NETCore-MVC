@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using TechNest.Models;
 
 namespace TechNest.Controllers
@@ -214,6 +215,48 @@ namespace TechNest.Controllers
             {
                 ViewBag.ErrorMessage = "Failed to update the password: " + result.Errors.First().Description;
             }
+
+            return View();
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword([Required, EmailAddress] string email)
+        {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.Email = email;
+
+            if (!ModelState.IsValid)
+            {
+                ViewBag.EmailError = ModelState["email"]?.Errors.First().ErrorMessage ?? "Invalid Email Address";
+                return View();
+            }
+
+            var user = await userManager.FindByEmailAsync(email);
+
+            if (user != null)
+            {
+                //generate password reset token
+                var token = await userManager.GeneratePasswordResetTokenAsync(user);
+                string resultUrl = Url.ActionLink("ResetPassword", "Account", new { token }) ?? "URL Error";
+
+                Console.WriteLine("Password reset link: " + resultUrl);
+            }
+
+            ViewBag.SuccessMessage = "If the email address is registered, a password reset link will be sent to the email address";
 
             return View();
         }
