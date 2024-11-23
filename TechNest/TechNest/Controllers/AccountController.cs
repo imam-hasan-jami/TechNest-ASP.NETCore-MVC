@@ -121,9 +121,64 @@ namespace TechNest.Controllers
         }
 
         [Authorize]
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile()
         {
-            return View();
+            var appUser = await userManager.GetUserAsync(User);
+            if (appUser == null)
+            {
+                return RedirectToAction("Index", "Home");
+
+            }
+
+            var profileDTO = new ProfileDTO()
+            {
+                FirstName = appUser.FirstName,
+                LastName = appUser.LastName,
+                Email = appUser.Email ?? "",
+                PhoneNumber = appUser.PhoneNumber,
+                Address = appUser.Address
+            };
+
+            return View(profileDTO);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Profile(ProfileDTO profileDTO)
+        {
+            if(!ModelState.IsValid)
+            {
+                ViewBag.ErrorMessage = "Please fill all the required feilds with valid values";
+                return View(profileDTO);
+            }
+
+            //get the current authenticated user
+            var appUser = await userManager.GetUserAsync(User);
+            if (appUser == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            //update the user profile
+            appUser.FirstName = profileDTO.FirstName;
+            appUser.LastName = profileDTO.LastName;
+            appUser.UserName = profileDTO.Email;
+            appUser.Email = profileDTO.Email;
+            appUser.PhoneNumber = profileDTO.PhoneNumber;
+            appUser.Address = profileDTO.Address;
+
+            var result = await userManager.UpdateAsync(appUser);
+
+            if (result.Succeeded)
+            {
+                ViewBag.SuccessMessage = "Profile updated successfully";
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Failed to update the profile: " + result.Errors.First().Description;
+            }
+            
+            return View(profileDTO);
         }
 
         public IActionResult AccessDenied()
