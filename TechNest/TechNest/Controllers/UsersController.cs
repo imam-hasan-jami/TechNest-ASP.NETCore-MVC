@@ -11,15 +11,32 @@ namespace TechNest.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
+        private readonly int pageSize = 5;
 
         public UsersController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
         }
-        public IActionResult Index()
+        public IActionResult Index(int? pageIndex)
         {
-            var users = userManager.Users.OrderByDescending(u => u.CreatedAt).ToList();
+            IQueryable<ApplicationUser> query = userManager.Users.OrderByDescending(u => u.CreatedAt);
+
+            // pagination functionality
+            if (pageIndex == null || pageIndex < 1)
+            {
+                pageIndex = 1;
+            }
+
+            decimal count = query.Count();
+            int totalPages = (int)Math.Ceiling(count / pageSize);
+            query = query.Skip(((int)pageIndex - 1) * pageSize).Take(pageSize); 
+
+
+            var users = query.ToList();
+
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.TotalPages = totalPages;
 
             return View(users);
         }
