@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using TechNest.Models;
 using TechNest.Services;
@@ -268,12 +269,72 @@ namespace TechNest.Controllers
                     "Regards,\n" +
                     "Brevo Team";
 
-                EmailSender.SendEmail(senderName, senderEmail, username, email, subject, message);
+                EmailSender.SendEmail(senderName, senderEmail, username, email, subject, message); 
             }
 
             ViewBag.SuccessMessage = "If the email address is registered, a password reset link will be sent to the email address";
 
             return View();
+        }
+
+        public IActionResult ResetPassword(string? token)
+        {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (token == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(string? token, PasswordResetDTO passwordResetDTO)
+        {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (token == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(passwordResetDTO);
+            }
+
+            var user = await userManager.FindByEmailAsync(passwordResetDTO.Email);
+            if (user == null) {
+                ViewBag.ErrorMessage = "Invalid email address";
+                return View(passwordResetDTO);
+            }
+
+            var result = await userManager.ResetPasswordAsync(user, token, passwordResetDTO.Password);
+            if (result.Succeeded)
+            {
+                ViewBag.SuccessMessage = "Password reset successfully";
+                //return RedirectToAction("Login");
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+
+            //ViewBag.ErrorMessage = "Failed to reset the password: " + result.Errors.First().Description;
+
+
+
+            return View(passwordResetDTO);
         }
 
         public IActionResult AccessDenied()
