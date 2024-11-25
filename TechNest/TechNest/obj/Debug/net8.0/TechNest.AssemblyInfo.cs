@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechNest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11d7dd46fb19056dc320d350fae0b33b5e57a096")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe2726a286b3daaa958fa4e53bc6869b650176df")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechNest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechNest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
