@@ -107,5 +107,40 @@ namespace TechNest.Controllers
 
             return RedirectToAction("Details", "Users", new { id });
         }
+
+        public async Task<IActionResult> DeleteAccount(string? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index", "Users");
+            }
+
+            var appUser = await userManager.FindByIdAsync(id);
+
+            if (appUser == null)
+            {
+                return RedirectToAction("Index", "Users");
+            }
+
+            var currentUser = await userManager.GetUserAsync(User);
+            if (currentUser!.Id == appUser.Id)
+            {
+                TempData["ErrorMessage"] = "You cannot delete your own account";
+
+                return RedirectToAction("Details", "Users", new { id });
+            }
+
+            // delete user account
+            var result = await userManager.DeleteAsync(appUser);
+            if (result.Succeeded)
+            {
+                TempData["SuccessMessage"] = "User account deleted successfully";
+                return RedirectToAction("Index", "Users");
+            }
+
+            TempData["ErrorMessage"] = "An error occurred while deleting the user account: " + result.Errors.First().Description;
+
+            return RedirectToAction("Index", "Users");
+        }
     }
 }

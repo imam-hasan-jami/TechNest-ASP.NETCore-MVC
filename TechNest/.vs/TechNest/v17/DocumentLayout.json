@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|solutionrelative:technest\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B64F057-1A5E-40BF-90D5-765A43AF24AF}|TechNest\\TechNest.csproj|d:\\asp.net core\\technest-asp.netcore-mvc\\technest\\technest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -30,19 +30,6 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Users\\Index.cshtml",
-              "RelativeDocumentMoniker": "TechNest\\Views\\Users\\Index.cshtml",
-              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Users\\Index.cshtml",
-              "RelativeToolTip": "TechNest\\Views\\Users\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-25T08:41:55.861Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Shared\\_Layout.cshtml",
@@ -56,15 +43,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Users\\Details.cshtml",
               "RelativeDocumentMoniker": "TechNest\\Views\\Users\\Details.cshtml",
               "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Users\\Details.cshtml",
               "RelativeToolTip": "TechNest\\Views\\Users\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-25T07:41:33.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "TechNest\\Views\\Users\\Index.cshtml",
+              "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Views\\Users\\Index.cshtml",
+              "RelativeToolTip": "TechNest\\Views\\Users\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-25T08:41:55.861Z",
               "EditorCaption": ""
             },
             {
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "TechNest\\Controllers\\UsersController.cs",
               "ToolTip": "D:\\ASP.NET Core\\TechNest-ASP.NETCore-MVC\\TechNest\\TechNest\\Controllers\\UsersController.cs",
               "RelativeToolTip": "TechNest\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAswGIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T06:49:02.752Z",
               "EditorCaption": ""
