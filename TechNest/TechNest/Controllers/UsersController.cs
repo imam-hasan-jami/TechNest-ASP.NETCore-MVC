@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TechNest.Models;
 
 namespace TechNest.Controllers
@@ -56,7 +57,55 @@ namespace TechNest.Controllers
 
             ViewBag.Roles = await userManager.GetRolesAsync(appUser);
 
+            //get available roles
+            var availableRoles = roleManager.Roles.ToList();
+            var items = new List<SelectListItem>();
+            foreach (var role in availableRoles) {
+                items.Add(
+                    new SelectListItem
+                    {
+                        Text = role.NormalizedName,
+                        Value = role.Name,
+                        Selected = await userManager.IsInRoleAsync(appUser, role.Name!)
+                    });
+            }
+
+            ViewBag.SelectItems = items;
+
             return View(appUser);
+        }
+
+        public async Task<IActionResult> EditRole(string? id, string? newRole)
+        {
+            if (id == null || newRole == null)
+            {
+                return RedirectToAction("Index", "Users");
+            }
+
+            var roleExists = await roleManager.RoleExistsAsync(newRole);
+            var appUser = await userManager.FindByIdAsync(id);
+
+            if (appUser == null || !roleExists)
+            {
+                return RedirectToAction("Index", "Users");
+            }
+
+            var currentUser = await userManager.GetUserAsync(User);
+            if (currentUser!.Id == appUser.Id)
+            {
+                TempData["ErrorMessage"] = "You cannot change your own role";
+
+                return RedirectToAction("Details", "Users", new { id });
+            }
+
+            // update the user 's role
+            var userRoles = await userManager.GetRolesAsync(appUser);
+            await userManager.RemoveFromRolesAsync(appUser, userRoles);
+            await userManager.AddToRoleAsync(appUser, newRole);
+
+            TempData["SuccessMessage"] = "User Role updated successfully";
+
+            return RedirectToAction("Details", "Users", new { id });
         }
     }
 }
