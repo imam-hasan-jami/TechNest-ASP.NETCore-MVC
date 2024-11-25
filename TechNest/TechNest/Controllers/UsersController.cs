@@ -40,5 +40,23 @@ namespace TechNest.Controllers
 
             return View(users);
         }
+
+        public async Task<IActionResult> Details(string? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index", "Users");
+            }
+
+            var appUser = await userManager.FindByIdAsync(id);
+
+            if (appUser == null) {
+                return RedirectToAction("Index", "Users");
+            }
+
+            ViewBag.Roles = await userManager.GetRolesAsync(appUser);
+
+            return View(appUser);
+        }
     }
 }
